@@ -1,30 +1,26 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { useTheme } from "next-themes"
+import { ColorModeContext } from "@/context/theme-context"
+import { FormControlLabel, useTheme } from "@mui/material"
+import { useContext, useMemo } from "react"
+import { MaterialUISwitch } from "./ui-switch"
 
 const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
-    
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
+  const theme = useTheme()
+  const colorMode = useContext(ColorModeContext)
 
-  if (!mounted) {
-    return null
-  }
+  const isChecked = useMemo(
+    () => theme.palette.mode === "dark",
+    [theme.palette.mode]
+  )
 
   return (
-    <button
-      aria-label="Toggle Dark Mode"
-      onClick={() =>
-        setTheme(
-          theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
-        )
-      }
-    >
-      <span>{theme === "dark" ? `🌟` : `🌑`}</span>
-    </button>
+    <FormControlLabel
+      checked={isChecked}
+      onChange={colorMode.toggleColorMode}
+      control={<MaterialUISwitch defaultChecked={isChecked} />}
+      label=""
+    />
   )
 }
 

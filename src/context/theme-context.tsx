@@ -1,16 +1,35 @@
 "use client"
 
 import siteMetadata from "@/data/site-metadata"
-import { ThemeProvider } from "next-themes"
+import { PaletteMode, ThemeProvider, createTheme } from "@mui/material"
+import { FC, PropsWithChildren, createContext, useMemo, useState } from "react"
 
-export function ThemeProviders({ children }: { children: React.ReactNode }) {
+export const ColorModeContext = createContext({ toggleColorMode: () => {} })
+
+export const ThemeProviders: FC<PropsWithChildren> = ({ children }) => {
+  const [mode, setMode] = useState<PaletteMode>(siteMetadata.theme)
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"))
+      },
+    }),
+    []
+  )
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode]
+  )
+
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme={siteMetadata.theme}
-      enableSystem
-    >
-      {children}
-    </ThemeProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </ColorModeContext.Provider>
   )
 }

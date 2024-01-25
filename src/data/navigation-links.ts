@@ -1,10 +1,10 @@
 export const navigationLinks = [
   {
     path: "/",
-    name: "Home",
+    name: "Portfolio",
   },
   {
-    path: "/portfolio",
-    name: "Portfolio",
+    path: "/contact",
+    name: "Contact",
   },
 ]

@@ -1,15 +1,11 @@
 import Header from "@/components/header"
 import { ThemeProviders } from "@/context/theme-context"
-import siteMetadata from "@/data/site-metadata"
-import type { Metadata } from "next"
+import { Box } from "@mui/material"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  ...siteMetadata,
-}
 
 export default function RootLayout({
   children,
@@ -19,10 +15,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProviders>
-          <Header />
-          {children}
-        </ThemeProviders>
+        <AppRouterCacheProvider>
+          <ThemeProviders>
+            <Box
+              bgcolor={"background.default"}
+              color={"text.primary"}
+              height={"100svh"}
+            >
+              <Header />
+              {children}
+            </Box>
+          </ThemeProviders>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )
