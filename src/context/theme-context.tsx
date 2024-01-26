@@ -3,10 +3,11 @@
 import siteMetadata from "@/data/site-metadata"
 import { PaletteMode, ThemeProvider, createTheme } from "@mui/material"
 import { FC, PropsWithChildren, createContext, useMemo, useState } from "react"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} })
 
-export const ThemeProviders: FC<PropsWithChildren> = ({ children }) => {
+export const Providers: FC<PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<PaletteMode>(siteMetadata.theme)
   const colorMode = useMemo(
     () => ({
@@ -29,7 +30,9 @@ export const ThemeProviders: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <ParallaxProvider>{children}</ParallaxProvider>
+      </ThemeProvider>
     </ColorModeContext.Provider>
   )
 }

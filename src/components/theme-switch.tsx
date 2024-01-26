@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
     <FormControlLabel
       checked={isChecked}
       onChange={colorMode.toggleColorMode}
-      control={<MaterialUISwitch defaultChecked={isChecked} />}
+      control={<MaterialUISwitch />}
       label=""
     />
   )
