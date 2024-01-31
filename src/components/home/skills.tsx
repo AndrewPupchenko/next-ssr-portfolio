@@ -192,7 +192,7 @@ export const Skills = () => {
               borderRadius: 2,
               p: 2,
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-              backgroundColor: "rgba(background.default, 0.5)",
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
             }}
           >
             <Typography variant="h5" fontWeight="bold">
@@ -203,7 +203,7 @@ export const Skills = () => {
                 display: "grid",
                 alignItems: "center",
                 gridTemplateColumns: "repeat(auto-fill, minmax(10em, 1fr))",
-                gap: 1,
+                gap: 1.5,
                 mt: 3,
               }}
             >
@@ -213,13 +213,13 @@ export const Skills = () => {
                   <Box
                     key={skill.title}
                     sx={{
-                      border: "solid 0.1px",
                       borderRadius: 1,
                       p: 1,
                       display: "flex",
                       alignItems: "flex-end",
                       justifyContent: "space-between",
-                      background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(0, 0, 0, 0) ${skill.knowledge}%)`,
+                      boxShadow: "0 0 3px rgba(0, 0, 0, 0.7)",
+                      background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
                       minHeight: 50,
                     }}
                   >
