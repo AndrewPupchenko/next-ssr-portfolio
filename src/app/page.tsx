@@ -1,19 +1,16 @@
-import { PagePaths } from "@/data/navigation-links"
+import { AboutMe } from "@/components/home/about-me"
+import { Contact } from "@/components/home/contact"
+import { ShortInfo } from "@/components/home/short-info"
+import { Skills } from "@/components/home/skills"
 import { Box } from "@mui/material"
 
 export default function Home() {
   return (
-    <main>
-      <Box height={"100svh"}>SECTION 1</Box>
-      <Box id={PagePaths.Skills} height={"100svh"}>
-        skills
-      </Box>
-      <Box id={PagePaths.AboutMe} height={"100svh"}>
-        about-me
-      </Box>
-      <Box id={PagePaths.Contact} height={"100svh"}>
-        contact
-      </Box>
-    </main>
+    <Box component={"main"} maxWidth={"1000px"} mx="auto">
+      <ShortInfo />
+      <Skills />
+      <AboutMe />
+      <Contact />
+    </Box>
   )
 }

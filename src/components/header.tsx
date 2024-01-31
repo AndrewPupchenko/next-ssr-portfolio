@@ -1,5 +1,6 @@
 import { Box } from "@mui/material"
 import Navigation from "./navigation"
+import ThemeSwitch from "./theme-switch"
 
 const HEADER_HEIGHT = "4rem"
 
@@ -17,6 +18,7 @@ const Header = () => {
         zIndex={10}
       >
         <Navigation />
+        <ThemeSwitch />
       </Box>
       <Box height={HEADER_HEIGHT} />
     </>
