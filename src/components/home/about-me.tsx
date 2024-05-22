@@ -9,8 +9,8 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab"
-import { MainStack } from "../ui/main-stack"
 import { Box, Typography } from "@mui/material"
+import { MainStack } from "../ui/main-stack"
 
 type Experience = {
   title: string
@@ -222,7 +222,7 @@ const data: Experience[] = [
   },
 ]
 
-const TimeViewElelment = ({
+const TimeViewElement = ({
   endedAt,
   startedAt,
 }: {
@@ -254,7 +254,7 @@ const ExperienceView = ({
   return (
     <TimelineItem>
       <TimelineOppositeContent display={"contents"}>
-        <TimeViewElelment startedAt={startedAt} endedAt={endedAt} />
+        <TimeViewElement startedAt={startedAt} endedAt={endedAt} />
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot />
