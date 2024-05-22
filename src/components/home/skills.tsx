@@ -1,5 +1,5 @@
 import { PagePaths } from "@/data/navigation-links"
-import { Box, Stack, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { BiLogoSass, BiLogoTypescript } from "react-icons/bi"
 import { BsMicrosoftTeams } from "react-icons/bs"
 import {
@@ -25,6 +25,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si"
 import { TbBrandReactNative, TbFileTypeSql } from "react-icons/tb"
+import { MainStack } from "../ui/main-stack"
 
 const skillArray = [
   {
@@ -43,7 +44,7 @@ const skillArray = [
       {
         title: "HTML",
         icon: <FaHtml5 />,
-        knowledge: 85,
+        knowledge: 92,
       },
       {
         title: "Type Script",
@@ -61,7 +62,7 @@ const skillArray = [
         knowledge: 88,
       },
       {
-        title: "Next",
+        title: "Next.js",
         icon: <SiNextdotjs />,
         knowledge: 76,
       },
@@ -100,7 +101,7 @@ const skillArray = [
         icon: <FaPython />,
         knowledge: 50,
       },
-    ],
+    ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
   {
     title: "Communication",
@@ -131,7 +132,7 @@ const skillArray = [
         icon: <FaGithub />,
         knowledge: 95,
       },
-    ],
+    ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
   {
     title: "Other skills",
@@ -156,7 +157,7 @@ const skillArray = [
         icon: <TbFileTypeSql />,
         knowledge: 50,
       },
-    ],
+    ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
 ]
 
@@ -166,13 +167,7 @@ const data = {
 
 export const Skills = () => {
   return (
-    <Stack
-      id={PagePaths.Skills}
-      justifyContent={"center"}
-      spacing={4}
-      minHeight={"100svh"}
-      m={5}
-    >
+    <MainStack id={PagePaths.Skills}>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
         {data.title}
       </Typography>
@@ -192,7 +187,8 @@ export const Skills = () => {
               borderRadius: 2,
               p: 2,
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              background: "transparent",
+              backdropFilter: "blur(10px)",
             }}
           >
             <Typography variant="h5" fontWeight="bold">
@@ -207,30 +203,28 @@ export const Skills = () => {
                 mt: 3,
               }}
             >
-              {el.skills
-                .sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1))
-                .map((skill) => (
-                  <Box
-                    key={skill.title}
-                    sx={{
-                      borderRadius: 1,
-                      p: 1,
-                      display: "flex",
-                      alignItems: "flex-end",
-                      justifyContent: "space-between",
-                      boxShadow: "0 0 3px rgba(0, 0, 0, 0.7)",
-                      background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
-                      minHeight: 50,
-                    }}
-                  >
-                    {skill.icon}
-                    {skill.title}
-                  </Box>
-                ))}
+              {el.skills.map((skill) => (
+                <Box
+                  key={skill.title}
+                  sx={{
+                    borderRadius: 1,
+                    p: 1,
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "space-between",
+                    boxShadow: "0 0 3px rgba(0, 0, 0, 0.7)",
+                    background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
+                    minHeight: 50,
+                  }}
+                >
+                  {skill.icon}
+                  <Typography fontWeight={'bold'}>{skill.title}</Typography>
+                </Box>
+              ))}
             </Box>
           </Box>
         ))}
       </Box>
-    </Stack>
+    </MainStack>
   )
 }

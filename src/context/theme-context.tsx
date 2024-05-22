@@ -31,37 +31,35 @@ export const Providers: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <ParallaxProvider>
-          <Box
-            m={0}
-            component={"body"}
-            bgcolor={"background.default"}
-            color={"text.primary"}
-            sx={{
-              background: `linear-gradient(-45deg,  ${
-                mode === "dark"
-                  ? "#4e2a19, #4e1e3c, #1a3142, #1a3c2b"
-                  : "#ee7752, #e73c7e, #23a6d5, #23d5ab"
-              })`,
-              backgroundSize: "400% 400%",
-              animation: "gradient 15s ease infinite",
+        <Box
+          m={0}
+          component={"body"}
+          bgcolor={"background.default"}
+          color={"text.primary"}
+          sx={{
+            background: `linear-gradient(-45deg,  ${
+              mode === "dark"
+                ? "#4e2a19, #4e1e3c, #1a3142, #1a3c2b"
+                : "#ee7752, #e73c7e, #23a6d5, #23d5ab"
+            })`,
+            backgroundSize: "400% 400%",
+            animation: "gradient 15s ease infinite",
 
-              "@keyframes gradient": {
-                "0%": {
-                  backgroundPosition: "0% 50%",
-                },
-                "50%": {
-                  backgroundPosition: "100% 50%",
-                },
-                "100%": {
-                  backgroundPosition: "0% 50%",
-                },
+            "@keyframes gradient": {
+              "0%": {
+                backgroundPosition: "0% 50%",
               },
-            }}
-          >
-            {children}
-          </Box>
-        </ParallaxProvider>
+              "50%": {
+                backgroundPosition: "100% 50%",
+              },
+              "100%": {
+                backgroundPosition: "0% 50%",
+              },
+            },
+          }}
+        >
+          {children}
+        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   )

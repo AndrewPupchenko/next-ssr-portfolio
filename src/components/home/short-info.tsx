@@ -1,7 +1,9 @@
 import avatar from "@/data/images/avatar.jpg"
-import { Avatar, Button, Stack, Typography } from "@mui/material"
+import { PagePaths } from "@/data/navigation-links"
+import { Avatar, Button, Typography } from "@mui/material"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
+import { MainStack } from "../ui/main-stack"
 
 const data = {
   userName: "Andrew",
@@ -13,12 +15,7 @@ const data = {
 
 export const ShortInfo = () => {
   return (
-    <Stack
-      spacing={4}
-      justifyContent={"center"}
-      alignItems={"center"}
-      height={"100svh"}
-    >
+    <MainStack id={PagePaths.Home} height={"100svh"}>
       <Avatar
         alt={data.userName}
         src={avatar.src}
@@ -39,6 +36,6 @@ export const ShortInfo = () => {
       >
         <strong>{data.projects}</strong>
       </Button>
-    </Stack>
+    </MainStack>
   )
 }
