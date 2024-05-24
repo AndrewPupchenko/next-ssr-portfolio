@@ -14,10 +14,18 @@ const Header = () => {
         height={HEADER_HEIGHT}
         gap={1}
         alignItems={"center"}
-        justifyContent={"space-around"}
+        justifyContent={"center"}
         zIndex={10}
       >
         <Navigation />
+      </Box>
+      <Box
+        display={"flex"}
+        position={"fixed"}
+        bottom={10}
+        right={0}
+        zIndex={10}
+      >
         <ThemeSwitch />
       </Box>
       <Box height={HEADER_HEIGHT} />

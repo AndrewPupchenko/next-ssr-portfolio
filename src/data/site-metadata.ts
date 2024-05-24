@@ -8,7 +8,7 @@ const siteMetadata: Metadata & { theme: PaletteMode } = {
     { name: "Andrei Pupchenko", url: "https://github.com/AndrewPupchenko" },
   ],
   description: "The site is designed to demonstrate the development experience",
-  theme: "dark", // system, dark or light
+  theme: "dark",
 }
 
 export default siteMetadata

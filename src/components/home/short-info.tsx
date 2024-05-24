@@ -15,7 +15,7 @@ const data = {
   shortInfo:
     `with over ${YEARS_OF_EXPERIENCE} years of experience in TypeScript, React.js, and Next.js, along with backend experience in Node.js, Python, and C#.`,
   projects: "My Projects",
-  location: "Based in Serbia",
+  location: "Based in Serbia 🇷🇸",
   link: "https://github.com/AndrewPupchenko",
 }
 
