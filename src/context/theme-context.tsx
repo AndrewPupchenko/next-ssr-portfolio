@@ -39,8 +39,8 @@ export const Providers: FC<PropsWithChildren> = ({ children }) => {
           sx={{
             background: `linear-gradient(-45deg,  ${
               mode === "dark"
-                ? "#4e2a19, #4e1e3c, #1a3142, #1a3c2b"
-                : "#ee7752, #e73c7e, #23a6d5, #23d5ab"
+                ? "#3b1f12, #3a172e, #12222e, #122b1f"
+                : "#f9b599, #f9b2c9, #9bd7ed, #9bf2dd"
             })`,
             backgroundSize: "400% 400%",
             animation: "gradient 15s ease infinite",
