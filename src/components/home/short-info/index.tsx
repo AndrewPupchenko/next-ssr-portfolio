@@ -1,32 +1,18 @@
-import avatar from "@/data/images/avatar.jpg"
+import { StyledAvatar } from "@/components/ui/styled-avatar"
+import avatar from "@/data/images/avatar.png"
 import { PagePaths } from "@/data/navigation-links"
-import { Avatar, Box, Button, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import Link from "next/link"
+import { FC } from "react"
 import { FaGithub } from "react-icons/fa"
-import { MainStack } from "../ui/main-stack"
 import { IoLocationOutline } from "react-icons/io5"
+import { MainStack } from "../../ui/main-stack"
+import { ShortInfoProps } from "./short-info.types"
 
-const YEARS_OF_EXPERIENCE = new Date().getFullYear() - 2020
-
-const data = {
-  userName: "Andrew",
-  greeting: "Hi, I'm Andrew",
-  position: "Frontend Developer",
-  shortInfo:
-    `with over ${YEARS_OF_EXPERIENCE} years of experience in TypeScript, React.js, and Next.js, along with backend experience in Node.js, Python, and C#.`,
-  projects: "My Projects",
-  location: "Based in Serbia 🇷🇸",
-  link: "https://github.com/AndrewPupchenko",
-}
-
-export const ShortInfo = () => {
+export const ShortInfo: FC<ShortInfoProps> = (data) => {
   return (
     <MainStack id={PagePaths.Home} height={"100svh"} pt={0}>
-      <Avatar
-        alt={data.userName}
-        src={avatar.src}
-        sx={{ height: "30%", width: "auto" }}
-      />
+      <StyledAvatar alt={data.userName} src={avatar.src} />
       <Typography variant="h4" textAlign="center" fontWeight="bold">
         {data.greeting}
       </Typography>
@@ -58,3 +44,11 @@ export const ShortInfo = () => {
     </MainStack>
   )
 }
+
+export async function getServerSideProps(data: ShortInfoProps) {
+  return {
+    props: data,
+  }
+}
+
+export default ShortInfo

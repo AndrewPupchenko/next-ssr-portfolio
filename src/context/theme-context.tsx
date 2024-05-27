@@ -3,7 +3,6 @@
 import siteMetadata from "@/data/site-metadata"
 import { Box, PaletteMode, ThemeProvider, createTheme } from "@mui/material"
 import { FC, PropsWithChildren, createContext, useMemo, useState } from "react"
-import { ParallaxProvider } from "react-scroll-parallax"
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} })
 

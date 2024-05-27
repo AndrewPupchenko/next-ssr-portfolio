@@ -3,7 +3,7 @@ import { Metadata } from "next"
 
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata: Metadata & { theme: PaletteMode } = {
-  title: "Portfolio",
+  title: "Andrei Pupchenko",
   authors: [
     { name: "Andrei Pupchenko", url: "https://github.com/AndrewPupchenko" },
   ],
