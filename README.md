@@ -1,7 +1,3 @@
-Sure! Here's the English version of the portfolio description for your GitHub README.md file:
-
----
-
 # Portfolio Web Page
 
 Welcome to my portfolio page! Here you will find information about me, my projects, and my skills.
