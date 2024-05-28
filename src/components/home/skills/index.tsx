@@ -30,14 +30,12 @@ export const Skills: FC<SkillsProps> = (data) => {
               backdropFilter: "blur(10px)",
             }}
           >
-            <Typography variant="h5" fontWeight="bold">
-              {el.title}
-            </Typography>
+            <Typography variant="h5">{el.title}</Typography>
             <Box
               sx={{
                 display: "grid",
                 alignItems: "center",
-                gridTemplateColumns: "repeat(auto-fill, minmax(10em, 1fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(9em, 1fr))",
                 gap: 1.5,
                 mt: 3,
               }}
@@ -57,7 +55,7 @@ export const Skills: FC<SkillsProps> = (data) => {
                   }}
                 >
                   {skill.icon}
-                  <Typography fontWeight={"bold"}>{skill.title}</Typography>
+                  <Typography variant="body2">{skill.title}</Typography>
                 </Box>
               ))}
             </Box>

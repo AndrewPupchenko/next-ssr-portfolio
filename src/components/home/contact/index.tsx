@@ -1,44 +1,66 @@
+"use client"
+import { MainStack } from "@/components/ui/main-stack"
 import { PagePaths } from "@/data/navigation-links"
 import { Box, IconButton, Tooltip, Typography } from "@mui/material"
 import { FC } from "react"
+import { ContactProps } from "./contact.types"
 import { data } from "./data"
 import { MailtoForm } from "./mailto-form"
-import { ContactProps } from "./contact.types"
-import { MainStack } from "@/components/ui/main-stack"
 
 export const Contact: FC<ContactProps> = ({
+  email,
+  emailTitle,
   title,
+  subTitle,
   anotherContactTitle,
   contactWithMe,
 }) => {
   return (
     <MainStack id={PagePaths.Contact}>
-      <Typography variant="h4" textAlign="center" fontWeight="bold">
-        {title}
-      </Typography>
-      <MailtoForm />
       <Box
-        sx={{
-          p: 2,
-          borderRadius: 2,
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-          background: "transparent",
-          backdropFilter: "blur(10px)",
-        }}
-      >
-        <Typography variant="h6" textAlign="center" fontWeight="bold">
-          {anotherContactTitle}
-        </Typography>
+        sx={({ breakpoints }) => ({
+          display: "grid",
 
-        <Box mt={2} display={"flex"} justifyContent={"space-around"}>
-          {contactWithMe?.map(({ title, url, icon }) => (
-            <Tooltip title={title} key={title}>
-              <IconButton href={url} aria-label={title} color="primary">
-                {icon}
-              </IconButton>
-            </Tooltip>
-          ))}
+          gap: 3,
+          mt: 3,
+          [breakpoints.up("md")]: {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          },
+        })}
+      >
+        <Box>
+          <Typography variant="h3">{title}</Typography>
+          <Typography variant="h4">{subTitle}</Typography>
+
+          <Typography variant="body2" color={"text.secondary"} mt={2}>
+            {anotherContactTitle}
+          </Typography>
+
+          <Box
+            mt={2}
+            display={"inline-grid"}
+            sx={{ writingMode: "vertical-rl" }}
+            gap={2}
+          >
+            {contactWithMe?.map(({ title, url, icon }) => (
+              <Tooltip title={title} key={title}>
+                <IconButton
+                  href={url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label={title}
+                  color="primary"
+                >
+                  {icon}
+                </IconButton>
+              </Tooltip>
+            ))}
+          </Box>
         </Box>
+
+        <MailtoForm email={email} emailTitle={emailTitle} />
       </Box>
     </MainStack>
   )

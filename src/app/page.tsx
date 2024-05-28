@@ -10,7 +10,7 @@ import { Box } from "@mui/material"
 
 export default function Home() {
   return (
-    <Box component={"main"} maxWidth={"1000px"} mx="auto">
+    <Box component={"main"} maxWidth={"1440px"} mx="auto">
       <ShortInfo {...shortInfoData} />
       <Skills {...skillsData} />
       <AboutMe {...aboutMeData} />

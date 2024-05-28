@@ -12,7 +12,9 @@ import { ShortInfoProps } from "./short-info.types"
 export const ShortInfo: FC<ShortInfoProps> = (data) => {
   return (
     <MainStack id={PagePaths.Home} height={"100svh"} pt={0}>
-      <StyledAvatar alt={data.userName} src={avatar.src} />
+      <Link href={data.linkedIn} rel="noopener noreferrer" target="_blank">
+        <StyledAvatar alt={data.userName} src={avatar.src} />
+      </Link>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
         {data.greeting}
       </Typography>

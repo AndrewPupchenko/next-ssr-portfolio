@@ -36,9 +36,10 @@ const contactWithMe: ContactWithMe[] = [
 ]
 
 export const data: ContactProps = {
-  title: "Contact Me",
-  emailTitle: "I would be happy to answer any questions you may have by email.",
+  title: "Let's chat.",
+  subTitle: "Type me if you have any questions",
+  emailTitle: "Send me a message 🚀",
   email: "andrew.pupchenko@gmail.com",
-  anotherContactTitle: "You can also contact me in a convenient way for you: ",
+  anotherContactTitle: "You can also contact me in a convenient way for you.",
   contactWithMe,
 }

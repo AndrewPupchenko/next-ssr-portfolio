@@ -8,4 +8,5 @@ export const data: Record<string, string> = {
   projects: "My Projects",
   location: "Based in Serbia 🇷🇸",
   link: "https://github.com/AndrewPupchenko",
+  linkedIn: "https://linkedin.com/in/andrew-react",
 }

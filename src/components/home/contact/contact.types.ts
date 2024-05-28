@@ -7,6 +7,7 @@ export type ContactWithMe = {
 export type ContactProps = {
   title: string
   emailTitle: string
+  subTitle: string
   email: string
   anotherContactTitle: string
   contactWithMe: ContactWithMe[]

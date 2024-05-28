@@ -5,7 +5,7 @@ export type Skill = {
 }
 
 export type SkillArray = {
-  title: "Web development"
+  title: string
   skills: Skill[]
 }
 
