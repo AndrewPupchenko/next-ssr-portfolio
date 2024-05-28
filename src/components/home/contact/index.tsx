@@ -1,4 +1,3 @@
-"use client"
 import { MainStack } from "@/components/ui/main-stack"
 import { PagePaths } from "@/data/navigation-links"
 import { Box, IconButton, Tooltip, Typography } from "@mui/material"
@@ -6,6 +5,7 @@ import { FC } from "react"
 import { ContactProps } from "./contact.types"
 import { data } from "./data"
 import { MailtoForm } from "./mailto-form"
+import { ContactContainer } from "./components/contact-container"
 
 export const Contact: FC<ContactProps> = ({
   email,
@@ -17,19 +17,7 @@ export const Contact: FC<ContactProps> = ({
 }) => {
   return (
     <MainStack id={PagePaths.Contact}>
-      <Box
-        sx={({ breakpoints }) => ({
-          display: "grid",
-
-          gap: 3,
-          mt: 3,
-          [breakpoints.up("md")]: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          },
-        })}
-      >
+      <ContactContainer>
         <Box>
           <Typography variant="h3">{title}</Typography>
           <Typography variant="h4">{subTitle}</Typography>
@@ -61,7 +49,7 @@ export const Contact: FC<ContactProps> = ({
         </Box>
 
         <MailtoForm email={email} emailTitle={emailTitle} />
-      </Box>
+      </ContactContainer>
     </MainStack>
   )
 }
