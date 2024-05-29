@@ -7,7 +7,11 @@ import { FC } from 'react'
 import { AboutMeProps } from './about-me.types'
 import { ExperienceView } from './experience-view'
 
-export const AboutMe: FC<AboutMeProps> = ({ title, experience }) => {
+export const AboutMe: FC<AboutMeProps> = ({
+  title,
+  experience,
+  ...otherProps
+}) => {
   return (
     <MainStack id={PagePaths.AboutMe}>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
@@ -16,7 +20,9 @@ export const AboutMe: FC<AboutMeProps> = ({ title, experience }) => {
       <Timeline
         sx={{ '& .MuiTimelineItem-root': { '&:before': { content: 'none' } } }}
       >
-        {experience?.map((el, index) => <ExperienceView {...el} key={index} />)}
+        {experience?.map((el, index) => (
+          <ExperienceView {...el} {...otherProps} key={index} />
+        ))}
       </Timeline>
     </MainStack>
   )
