@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { PagePaths } from "@/data/navigation-links"
-import { useRouter } from "next/navigation"
-import { FC, PropsWithChildren } from "react"
-import { InView } from "react-intersection-observer"
+import { PagePaths } from '@/data/navigation-links'
+import { useRouter } from 'next/navigation'
+import { FC, PropsWithChildren } from 'react'
+import { InView } from 'react-intersection-observer'
 
 export const InViewScroll: FC<PropsWithChildren<{ id: PagePaths }>> = ({
   id,

@@ -1,5 +1,5 @@
-import { BiLogoSass, BiLogoTypescript } from "react-icons/bi"
-import { BsMicrosoftTeams } from "react-icons/bs"
+import { BiLogoSass, BiLogoTypescript } from 'react-icons/bi'
+import { BsMicrosoftTeams } from 'react-icons/bs'
 import {
   FaGithub,
   FaGoogle,
@@ -8,9 +8,9 @@ import {
   FaPython,
   FaReact,
   FaSlack,
-} from "react-icons/fa"
-import { PiFigmaLogoDuotone } from "react-icons/pi"
-import { RiJavascriptFill } from "react-icons/ri"
+} from 'react-icons/fa'
+import { PiFigmaLogoDuotone } from 'react-icons/pi'
+import { RiJavascriptFill } from 'react-icons/ri'
 import {
   SiAdobephotoshop,
   SiCsharp,
@@ -21,137 +21,137 @@ import {
   SiMui,
   SiNextdotjs,
   SiTailwindcss,
-} from "react-icons/si"
-import { TbBrandReactNative, TbFileTypeSql } from "react-icons/tb"
-import { SkillArray, SkillsProps } from "./skills.types"
+} from 'react-icons/si'
+import { TbBrandReactNative, TbFileTypeSql } from 'react-icons/tb'
+import { SkillArray, SkillsProps } from './skills.types'
 
 const skillArray: SkillArray[] = [
   {
-    title: "Web development",
+    title: 'Web development',
     skills: [
       {
-        title: "Java Script",
+        title: 'Java Script',
         icon: <RiJavascriptFill />,
         knowledge: 90,
       },
       {
-        title: "CSS",
+        title: 'CSS',
         icon: <SiCss3 />,
         knowledge: 91,
       },
       {
-        title: "HTML",
+        title: 'HTML',
         icon: <FaHtml5 />,
         knowledge: 92,
       },
       {
-        title: "Type Script",
+        title: 'Type Script',
         icon: <BiLogoTypescript />,
         knowledge: 95,
       },
       {
-        title: "React",
+        title: 'React',
         icon: <FaReact />,
         knowledge: 94,
       },
       {
-        title: "React Native",
+        title: 'React Native',
         icon: <TbBrandReactNative />,
         knowledge: 88,
       },
       {
-        title: "Next.js",
+        title: 'Next.js',
         icon: <SiNextdotjs />,
         knowledge: 76,
       },
       {
-        title: "MUI",
+        title: 'MUI',
         icon: <SiMui />,
         knowledge: 100,
       },
       {
-        title: "SASS/SCSS",
+        title: 'SASS/SCSS',
         icon: <BiLogoSass />,
         knowledge: 62,
       },
       {
-        title: "Tailwind",
+        title: 'Tailwind',
         icon: <SiTailwindcss />,
         knowledge: 60,
       },
       {
-        title: "GraphQL",
+        title: 'GraphQL',
         icon: <SiGraphql />,
         knowledge: 90,
       },
       {
-        title: "Node.js",
+        title: 'Node.js',
         icon: <FaNodeJs />,
         knowledge: 70,
       },
       {
-        title: "C#",
+        title: 'C#',
         icon: <SiCsharp />,
         knowledge: 50,
       },
       {
-        title: "Python",
+        title: 'Python',
         icon: <FaPython />,
         knowledge: 50,
       },
     ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
   {
-    title: "Communication",
+    title: 'Communication',
     skills: [
       {
-        title: "Slack",
+        title: 'Slack',
         icon: <FaSlack />,
         knowledge: 100,
       },
       {
-        title: "Microsoft Teams",
+        title: 'Microsoft Teams',
         icon: <BsMicrosoftTeams />,
 
         knowledge: 100,
       },
       {
-        title: "Jira",
+        title: 'Jira',
         icon: <SiJira />,
         knowledge: 90,
       },
       {
-        title: "Google Meets",
+        title: 'Google Meets',
         icon: <FaGoogle />,
         knowledge: 100,
       },
       {
-        title: "Github",
+        title: 'Github',
         icon: <FaGithub />,
         knowledge: 95,
       },
     ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
   {
-    title: "Other skills",
+    title: 'Other skills',
     skills: [
       {
-        title: "Figma",
+        title: 'Figma',
         icon: <PiFigmaLogoDuotone />,
         knowledge: 60,
       },
       {
-        title: "Jest",
+        title: 'Jest',
         icon: <SiJest />,
         knowledge: 85,
       },
       {
-        title: "Adobe Photoshop",
+        title: 'Adobe Photoshop',
         icon: <SiAdobephotoshop />,
         knowledge: 50,
       },
       {
-        title: "SQL",
+        title: 'SQL',
         icon: <TbFileTypeSql />,
         knowledge: 50,
       },
@@ -160,6 +160,6 @@ const skillArray: SkillArray[] = [
 ]
 
 export const data: SkillsProps = {
-  title: "My Tech Stack and Skills",
+  title: 'My Tech Stack and Skills',
   skillArray,
 }

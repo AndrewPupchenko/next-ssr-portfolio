@@ -1,22 +1,22 @@
-"use client"
+'use client'
 
-import { Box, Button, TextField, Typography } from "@mui/material"
-import React, { FC, useState } from "react"
-import { ContactProps } from "../contact.types"
+import { Box, Button, TextField, Typography } from '@mui/material'
+import React, { FC, useState } from 'react'
+import { ContactProps } from '../contact.types'
 
-export const MailtoForm: FC<Pick<ContactProps, "emailTitle" | "email">> = ({
+export const MailtoForm: FC<Pick<ContactProps, 'emailTitle' | 'email'>> = ({
   emailTitle,
   email,
 }) => {
-  const [subject, setSubject] = useState("")
-  const [body, setBody] = useState("")
+  const [subject, setSubject] = useState('')
+  const [body, setBody] = useState('')
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
       subject
-    )}&body=${encodeURIComponent(body ?? "")}`
-    window.open(mailtoLink, "_self")
+    )}&body=${encodeURIComponent(body ?? '')}`
+    window.open(mailtoLink, '_self')
   }
 
   return (
@@ -24,14 +24,14 @@ export const MailtoForm: FC<Pick<ContactProps, "emailTitle" | "email">> = ({
       component="form"
       onSubmit={handleSubmit}
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         p: 2,
         gap: 2,
         borderRadius: 2,
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-        background: "transparent",
-        backdropFilter: "blur(10px)",
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+        background: 'transparent',
+        backdropFilter: 'blur(10px)',
         minWidth: 400,
       }}
     >
@@ -56,9 +56,9 @@ export const MailtoForm: FC<Pick<ContactProps, "emailTitle" | "email">> = ({
         variant="contained"
         color="primary"
         sx={{
-          width: "10rem",
-          textTransform: "none",
-          fontWeight: "bold",
+          width: '10rem',
+          textTransform: 'none',
+          fontWeight: 'bold',
           mt: 2,
         }}
       >

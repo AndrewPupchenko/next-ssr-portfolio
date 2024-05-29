@@ -27,16 +27,19 @@ This project is a single-page site created using Next.js with server-side render
 If you want to run the project locally, follow these steps:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/AndrewPupchenko/next-ssr-portfolio.git
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd next-ssr-portfolio
    ```
 
 3. Install dependencies:
+
    ```bash
    npm install
    ```

@@ -1,8 +1,8 @@
-import Header from "@/components/header"
-import { Providers } from "@/context/theme-context"
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
-import { FC, PropsWithChildren } from "react"
-import siteMetadata from "@/data/site-metadata"
+import Header from '@/components/header'
+import { Providers } from '@/context/theme-context'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
+import { FC, PropsWithChildren } from 'react'
+import siteMetadata from '@/data/site-metadata'
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   <html lang="en">

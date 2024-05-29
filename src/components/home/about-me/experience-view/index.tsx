@@ -1,41 +1,39 @@
 import {
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
   TimelineItem,
   TimelineOppositeContent,
   TimelineSeparator,
-  TimelineDot,
-  TimelineConnector,
-  TimelineContent,
-} from "@mui/lab"
-import { Typography, Box } from "@mui/material"
-import React from "react"
-import { IoLocationOutline, IoCodeSlashOutline } from "react-icons/io5"
-import { data } from "../data"
-import { Experience } from "../about-me.types"
+} from '@mui/lab'
+import { Box, Typography } from '@mui/material'
+import { IoCodeSlashOutline, IoLocationOutline } from 'react-icons/io5'
+import { AboutMeProps, Experience } from '../about-me.types'
 
 const TimeViewElement = ({
   endedAt,
   startedAt,
 }: {
-  startedAt?: Experience["startedAt"]
-  endedAt?: Experience["endedAt"]
+  startedAt?: Experience['startedAt']
+  endedAt?: Experience['endedAt']
 }) => (
   <Box
-    display={"flex"}
-    flexDirection={"column"}
-    justifyContent={"space-around"}
+    display={'flex'}
+    flexDirection={'column'}
+    justifyContent={'space-around'}
   >
     <Typography
       variant="body2"
-      color={"text.secondary"}
-      sx={{ textOrientation: "sideways", writingMode: "vertical-rl" }}
+      color={'text.secondary'}
+      sx={{ textOrientation: 'sideways', writingMode: 'vertical-rl' }}
     >
       {endedAt?.getFullYear().toString()}
     </Typography>
     -
     <Typography
       variant="body2"
-      color={"text.secondary"}
-      sx={{ textOrientation: "sideways", writingMode: "vertical-rl" }}
+      color={'text.secondary'}
+      sx={{ textOrientation: 'sideways', writingMode: 'vertical-rl' }}
     >
       {startedAt?.getFullYear().toString()}
     </Typography>
@@ -53,10 +51,13 @@ export const ExperienceView = ({
   location,
   languages,
   children,
-}: Experience) => {
+  skillsTitle,
+  responsibilitiesTitle,
+}: Experience &
+  Pick<AboutMeProps, 'skillsTitle' | 'responsibilitiesTitle'>) => {
   return (
     <TimelineItem>
-      <TimelineOppositeContent display={"contents"}>
+      <TimelineOppositeContent display={'contents'}>
         <TimeViewElement startedAt={startedAt} endedAt={endedAt} />
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -64,15 +65,15 @@ export const ExperienceView = ({
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-        <Typography variant="h5" component="span" fontWeight={"bold"}>
+        <Typography variant="h5" component="span" fontWeight={'bold'}>
           {title}
         </Typography>
 
         <Typography
           component={Box}
-          sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+          sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
           variant="body2"
-          color={"text.secondary"}
+          color={'text.secondary'}
         >
           <IoLocationOutline />
           {company}, {location}
@@ -81,31 +82,31 @@ export const ExperienceView = ({
         <Typography
           component={Box}
           sx={{
-            display: languages?.length ? "flex" : "none",
-            alignItems: "center",
+            display: languages?.length ? 'flex' : 'none',
+            alignItems: 'center',
             gap: 0.5,
           }}
           variant="body2"
-          color={"text.secondary"}
+          color={'text.secondary'}
         >
           <IoCodeSlashOutline />
-          {languages?.join(", ")}
+          {languages?.join(', ')}
         </Typography>
 
         <Typography variant="body2">{description}</Typography>
         {responsibilities?.length && (
           <>
-            <Typography variant="body2" fontWeight={"bold"}>
-              {data.responsibilitiesTitle}:
+            <Typography variant="body2" fontWeight={'bold'}>
+              {responsibilitiesTitle}:
             </Typography>
 
             <ul>
               {responsibilities.map((responsibility, i) => (
                 <Typography
                   key={i}
-                  component={"li"}
+                  component={'li'}
                   variant="body2"
-                  color={"text.secondary"}
+                  color={'text.secondary'}
                 >
                   {responsibility}
                 </Typography>
@@ -115,16 +116,20 @@ export const ExperienceView = ({
         )}
         {children?.map((ch, chI) => (
           <TimelineItem key={chI}>
-            <ExperienceView {...ch} />
+            <ExperienceView
+              {...ch}
+              skillsTitle={skillsTitle}
+              responsibilitiesTitle={responsibilitiesTitle}
+            />
           </TimelineItem>
         ))}
         {skills?.length && (
           <>
-            <Typography variant="body2" fontWeight={"bold"}>
-              {data.skillsTitle}:
+            <Typography variant="body2" fontWeight={'bold'}>
+              {skillsTitle}:
             </Typography>
-            <Typography variant="body2" color={"text.secondary"}>
-              {skills?.join(", ")}
+            <Typography variant="body2" color={'text.secondary'}>
+              {skills?.join(', ')}
             </Typography>
           </>
         )}

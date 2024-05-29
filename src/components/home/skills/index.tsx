@@ -1,8 +1,8 @@
-import { PagePaths } from "@/data/navigation-links"
-import { Box, Typography } from "@mui/material"
-import { FC } from "react"
-import { MainStack } from "../../ui/main-stack"
-import { SkillsProps } from "./skills.types"
+import { PagePaths } from '@/data/navigation-links'
+import { Box, Typography } from '@mui/material'
+import { FC } from 'react'
+import { MainStack } from '../../ui/main-stack'
+import { SkillsProps } from './skills.types'
 
 export const Skills: FC<SkillsProps> = (data) => {
   return (
@@ -12,11 +12,11 @@ export const Skills: FC<SkillsProps> = (data) => {
       </Typography>
       <Box
         sx={{
-          display: "grid",
-          alignItems: "center",
-          gridTemplateColumns: "repeat(auto-fill, minmax(min-content, 2fr))",
+          display: 'grid',
+          alignItems: 'center',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min-content, 2fr))',
           gridGap: 24,
-          width: "100%",
+          width: '100%',
         }}
       >
         {data.skillArray.map((el) => (
@@ -25,17 +25,17 @@ export const Skills: FC<SkillsProps> = (data) => {
             sx={{
               borderRadius: 2,
               p: 2,
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-              background: "transparent",
-              backdropFilter: "blur(10px)",
+              boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+              background: 'transparent',
+              backdropFilter: 'blur(10px)',
             }}
           >
             <Typography variant="h5">{el.title}</Typography>
             <Box
               sx={{
-                display: "grid",
-                alignItems: "center",
-                gridTemplateColumns: "repeat(auto-fill, minmax(9em, 1fr))",
+                display: 'grid',
+                alignItems: 'center',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(9em, 1fr))',
                 gap: 1.5,
                 mt: 3,
               }}
@@ -46,10 +46,10 @@ export const Skills: FC<SkillsProps> = (data) => {
                   sx={{
                     borderRadius: 1,
                     p: 1,
-                    display: "flex",
-                    alignItems: "flex-end",
-                    justifyContent: "space-between",
-                    boxShadow: "0 0 3px rgba(0, 0, 0, 0.7)",
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 0 3px rgba(0, 0, 0, 0.7)',
                     background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
                     minHeight: 50,
                   }}
@@ -64,12 +64,6 @@ export const Skills: FC<SkillsProps> = (data) => {
       </Box>
     </MainStack>
   )
-}
-
-export async function getServerSideProps(data: SkillsProps) {
-  return {
-    props: data,
-  }
 }
 
 export default Skills

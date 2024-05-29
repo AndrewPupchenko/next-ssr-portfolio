@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn pre-commit
+
+git add $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+
+exit $?
