@@ -7,8 +7,9 @@ import { data as shortInfoData } from '@/components/home/short-info/data'
 import Skills from '@/components/home/skills'
 import { data as skillsData } from '@/components/home/skills/data'
 import { Box } from '@mui/material'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export default function Home() {
+function Home() {
   return (
     <Box component={'main'} maxWidth={'1440px'} mx="auto">
       <ShortInfo {...shortInfoData} />
@@ -18,3 +19,11 @@ export default function Home() {
     </Box>
   )
 }
+
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
+
+export default Home
