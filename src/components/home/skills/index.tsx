@@ -50,7 +50,7 @@ export const Skills: FC = () => {
                     alignItems: 'flex-end',
                     justifyContent: 'space-between',
                     boxShadow: '0 0 3px rgba(0, 0, 0, 0.7)',
-                    background: `linear-gradient(to top, rgba(52, 152, 219, 0.7) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
+                    background: `linear-gradient(to top, rgba(52, 152, 219, ${skill.knowledge * 0.008}) ${skill.knowledge}%, rgba(255, 255, 255, 0.1) ${skill.knowledge}%)`,
                     minHeight: 50,
                   }}
                 >

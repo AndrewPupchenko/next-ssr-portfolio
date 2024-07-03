@@ -32,7 +32,7 @@ const skillArray: SkillArray[] = [
       {
         title: 'Java Script',
         icon: <RiJavascriptFill />,
-        knowledge: 90,
+        knowledge: 93,
       },
       {
         title: 'CSS',
@@ -47,12 +47,12 @@ const skillArray: SkillArray[] = [
       {
         title: 'Type Script',
         icon: <BiLogoTypescript />,
-        knowledge: 95,
+        knowledge: 97,
       },
       {
         title: 'React',
         icon: <FaReact />,
-        knowledge: 94,
+        knowledge: 96,
       },
       {
         title: 'React Native',
@@ -62,7 +62,7 @@ const skillArray: SkillArray[] = [
       {
         title: 'Next.js',
         icon: <SiNextdotjs />,
-        knowledge: 76,
+        knowledge: 85,
       },
       {
         title: 'MUI',
@@ -72,12 +72,12 @@ const skillArray: SkillArray[] = [
       {
         title: 'SASS/SCSS',
         icon: <BiLogoSass />,
-        knowledge: 62,
+        knowledge: 78,
       },
       {
         title: 'Tailwind',
         icon: <SiTailwindcss />,
-        knowledge: 60,
+        knowledge: 79,
       },
       {
         title: 'GraphQL',
