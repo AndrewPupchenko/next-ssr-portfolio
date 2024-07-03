@@ -5,6 +5,8 @@ import { FC } from 'react'
 import { ContactContainer } from './components/contact-container'
 import { ContactProps } from './contact.types'
 import { MailtoForm } from './mailto-form'
+import { GetStaticProps } from 'next'
+import { data as props } from './api/data'
 
 export const Contact: FC<ContactProps> = ({
   email,
@@ -34,7 +36,7 @@ export const Contact: FC<ContactProps> = ({
             {contactWithMe?.map(({ title, url, icon }) => (
               <Tooltip title={title} key={title}>
                 <IconButton
-                  href={url}
+                  href={url || ''}
                   rel="noopener noreferrer"
                   target="_blank"
                   aria-label={title}
@@ -52,5 +54,9 @@ export const Contact: FC<ContactProps> = ({
     </MainStack>
   )
 }
+
+export const getStaticProps = (() => {
+  return { props }
+}) satisfies GetStaticProps<ContactProps>
 
 export default Contact

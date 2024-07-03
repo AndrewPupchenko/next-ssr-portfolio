@@ -1,4 +1,3 @@
-'use client'
 import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
 import { Timeline } from '@mui/lab'
@@ -6,12 +5,10 @@ import { Typography } from '@mui/material'
 import { FC } from 'react'
 import { AboutMeProps } from './about-me.types'
 import { ExperienceView } from './experience-view'
+import { GetStaticProps } from 'next'
+import { data } from './api/data'
 
-export const AboutMe: FC<AboutMeProps> = ({
-  title,
-  experience,
-  ...otherProps
-}) => {
+const AboutMe: FC<AboutMeProps> = ({ title, experience, ...otherProps }) => {
   return (
     <MainStack id={PagePaths.AboutMe}>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
@@ -27,5 +24,9 @@ export const AboutMe: FC<AboutMeProps> = ({
     </MainStack>
   )
 }
+
+export const getStaticProps = (async () => {
+  return { props: data }
+}) satisfies GetStaticProps<AboutMeProps>
 
 export default AboutMe

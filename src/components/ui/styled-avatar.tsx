@@ -1,10 +1,11 @@
 'use client'
 
 import { styled } from '@mui/material'
+import Image from 'next/image'
 
-export const StyledAvatar = styled('img')(({ theme }) => ({
-  '--s': '20rem', // image size
-  '--b': '6px', // border thickness
+export const StyledAvatar = styled(Image)(({ theme }) => ({
+  '--s': '340px', // image size
+  '--b': '10px', // border thickness
   '--c': theme.palette.primary.main, // border color
   '--cb': '#e9ecef', // background color
   '--f': '1', // initial scale

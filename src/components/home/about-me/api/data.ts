@@ -1,4 +1,4 @@
-import { AboutMeProps } from './about-me.types'
+import { AboutMeProps } from '../about-me.types'
 
 export const data: AboutMeProps = {
   title: 'About my Experience',

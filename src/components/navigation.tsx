@@ -16,7 +16,7 @@ const Navigation = () => {
           key={el.path}
           label={el.name}
           value={el.path}
-          href={el.path}
+          href={el?.path}
           sx={{ textTransform: 'none' }}
           component={Link}
         />

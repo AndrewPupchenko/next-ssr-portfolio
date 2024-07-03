@@ -23,7 +23,7 @@ import {
   SiTailwindcss,
 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeSql } from 'react-icons/tb'
-import { SkillArray, SkillsProps } from './skills.types'
+import { SkillArray, SkillsProps } from '../skills.types'
 
 const skillArray: SkillArray[] = [
   {

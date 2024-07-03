@@ -1,8 +1,10 @@
+import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
 import { Box, Typography } from '@mui/material'
 import { FC } from 'react'
-import { MainStack } from '../../ui/main-stack'
 import { SkillsProps } from './skills.types'
+import { data as props } from './api/data'
+import { GetStaticProps } from 'next'
 
 export const Skills: FC<SkillsProps> = (data) => {
   return (
@@ -19,7 +21,7 @@ export const Skills: FC<SkillsProps> = (data) => {
           width: '100%',
         }}
       >
-        {data.skillArray.map((el) => (
+        {data?.skillArray?.map((el) => (
           <Box
             key={el.title}
             sx={{
@@ -65,5 +67,9 @@ export const Skills: FC<SkillsProps> = (data) => {
     </MainStack>
   )
 }
+
+export const getStaticProps = (() => {
+  return { props }
+}) satisfies GetStaticProps<SkillsProps>
 
 export default Skills

@@ -5,7 +5,7 @@ import {
   FaTelegramPlane,
 } from 'react-icons/fa'
 import { MdOutlineEmail } from 'react-icons/md'
-import { ContactProps, ContactWithMe } from './contact.types'
+import { ContactProps, ContactWithMe } from '../contact.types'
 
 const contactWithMe: ContactWithMe[] = [
   {
