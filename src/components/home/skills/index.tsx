@@ -2,11 +2,9 @@ import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
 import { Box, Typography } from '@mui/material'
 import { FC } from 'react'
-import { SkillsProps } from './skills.types'
-import { data as props } from './api/data'
-import { GetStaticProps } from 'next'
+import { data } from './api/data'
 
-export const Skills: FC<SkillsProps> = (data) => {
+export const Skills: FC = () => {
   return (
     <MainStack id={PagePaths.Skills}>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
@@ -67,9 +65,5 @@ export const Skills: FC<SkillsProps> = (data) => {
     </MainStack>
   )
 }
-
-export const getStaticProps = (() => {
-  return { props }
-}) satisfies GetStaticProps<SkillsProps>
 
 export default Skills

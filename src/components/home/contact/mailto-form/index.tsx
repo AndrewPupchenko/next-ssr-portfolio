@@ -23,7 +23,7 @@ export const MailtoForm: FC<Pick<ContactProps, 'emailTitle' | 'email'>> = ({
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
+      sx={({ breakpoints }) => ({
         display: 'flex',
         flexDirection: 'column',
         p: 2,
@@ -33,7 +33,8 @@ export const MailtoForm: FC<Pick<ContactProps, 'emailTitle' | 'email'>> = ({
         background: 'transparent',
         backdropFilter: 'blur(10px)',
         minWidth: 400,
-      }}
+        [breakpoints.down('md')]: { minWidth: 100 },
+      })}
     >
       <Typography variant="h5" mb={2}>
         {emailTitle}

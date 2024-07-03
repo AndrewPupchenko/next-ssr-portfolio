@@ -5,28 +5,23 @@ import { Typography } from '@mui/material'
 import { FC } from 'react'
 import { AboutMeProps } from './about-me.types'
 import { ExperienceView } from './experience-view'
-import { GetStaticProps } from 'next'
 import { data } from './api/data'
 
-const AboutMe: FC<AboutMeProps> = ({ title, experience, ...otherProps }) => {
+const AboutMe: FC = () => {
   return (
     <MainStack id={PagePaths.AboutMe}>
       <Typography variant="h4" textAlign="center" fontWeight="bold">
-        {title}
+        {data.title}
       </Typography>
       <Timeline
         sx={{ '& .MuiTimelineItem-root': { '&:before': { content: 'none' } } }}
       >
-        {experience?.map((el, index) => (
-          <ExperienceView {...el} {...otherProps} key={index} />
+        {data.experience?.map((el, index) => (
+          <ExperienceView {...el} {...data} key={index} />
         ))}
       </Timeline>
     </MainStack>
   )
 }
-
-export const getStaticProps = (async () => {
-  return { props: data }
-}) satisfies GetStaticProps<AboutMeProps>
 
 export default AboutMe

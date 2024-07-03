@@ -3,13 +3,13 @@
 import { Box, styled } from '@mui/material'
 
 export const ContactContainer = styled(Box)(({ theme }) => ({
-  display: 'grid',
-  gap: 3,
-  mt: 3,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: 40,
 
-  [theme.breakpoints.up('md')]: {
-    display: 'flex',
+  [theme.breakpoints.down('md')]: {
+    display: 'grid',
     alignItems: 'center',
-    gap: 20,
   },
 }))

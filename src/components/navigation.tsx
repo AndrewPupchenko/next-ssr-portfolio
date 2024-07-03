@@ -10,12 +10,13 @@ const Navigation = () => {
   const currentTab = useRouteMatch(links)
 
   return (
-    <Tabs value={currentTab}>
+    <Tabs value={currentTab} allowScrollButtonsMobile>
       {navigationLinks.map((el) => (
         <Tab
           key={el.path}
           label={el.name}
           value={el.path}
+          icon={el.icon}
           href={el?.path}
           sx={{ textTransform: 'none' }}
           component={Link}

@@ -2,29 +2,20 @@ import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
 import { Box, IconButton, Tooltip, Typography } from '@mui/material'
 import { FC } from 'react'
+import { data } from './api/data'
 import { ContactContainer } from './components/contact-container'
-import { ContactProps } from './contact.types'
 import { MailtoForm } from './mailto-form'
-import { GetStaticProps } from 'next'
-import { data as props } from './api/data'
 
-export const Contact: FC<ContactProps> = ({
-  email,
-  emailTitle,
-  title,
-  subTitle,
-  anotherContactTitle,
-  contactWithMe,
-}) => {
+export const Contact: FC = () => {
   return (
     <MainStack id={PagePaths.Contact}>
       <ContactContainer>
         <Box>
-          <Typography variant="h3">{title}</Typography>
-          <Typography variant="h4">{subTitle}</Typography>
+          <Typography variant="h4">{data?.title}</Typography>
+          <Typography variant="h5">{data?.subTitle}</Typography>
 
           <Typography variant="body2" color={'text.secondary'} mt={2}>
-            {anotherContactTitle}
+            {data?.anotherContactTitle}
           </Typography>
 
           <Box
@@ -33,7 +24,7 @@ export const Contact: FC<ContactProps> = ({
             sx={{ writingMode: 'vertical-rl' }}
             gap={2}
           >
-            {contactWithMe?.map(({ title, url, icon }) => (
+            {data?.contactWithMe?.map(({ title, url, icon }) => (
               <Tooltip title={title} key={title}>
                 <IconButton
                   href={url || ''}
@@ -49,14 +40,10 @@ export const Contact: FC<ContactProps> = ({
           </Box>
         </Box>
 
-        <MailtoForm email={email} emailTitle={emailTitle} />
+        <MailtoForm email={data?.email} emailTitle={data?.emailTitle} />
       </ContactContainer>
     </MainStack>
   )
 }
-
-export const getStaticProps = (() => {
-  return { props }
-}) satisfies GetStaticProps<ContactProps>
 
 export default Contact
