@@ -1,3 +1,4 @@
+'use client'
 import { Box } from '@mui/material'
 import Navigation from './navigation'
 import ThemeSwitch from './theme-switch'
@@ -16,6 +17,12 @@ const Header = () => {
         alignItems={'center'}
         justifyContent={'center'}
         zIndex={10}
+        sx={({ breakpoints }) => ({
+          [breakpoints.down('sm')]: {
+            bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.1)',
+          },
+        })}
       >
         <Navigation />
       </Box>
@@ -25,6 +32,12 @@ const Header = () => {
         bottom={10}
         right={0}
         zIndex={10}
+        sx={({ breakpoints }) => ({
+          [breakpoints.down('sm')]: {
+            top: 10,
+            bottom: 'auto',
+          },
+        })}
       >
         <ThemeSwitch />
       </Box>
