@@ -1,3 +1,5 @@
+import otherSkillsIMG from '@/img/other-skills.png'
+import skillsIMG from '@/img/skills.svg'
 import { BiLogoSass, BiLogoTypescript } from 'react-icons/bi'
 import { BsMicrosoftTeams } from 'react-icons/bs'
 import {
@@ -20,7 +22,9 @@ import {
   SiJira,
   SiMui,
   SiNextdotjs,
+  SiNestjs,
   SiTailwindcss,
+  SiVisualstudiocode,
 } from 'react-icons/si'
 import { TbBrandReactNative, TbFileTypeSql } from 'react-icons/tb'
 import { SkillArray, SkillsProps } from '../skills.types'
@@ -28,6 +32,7 @@ import { SkillArray, SkillsProps } from '../skills.types'
 const skillArray: SkillArray[] = [
   {
     title: 'Web development',
+    image: skillsIMG,
     skills: [
       {
         title: 'Java Script',
@@ -87,7 +92,12 @@ const skillArray: SkillArray[] = [
       {
         title: 'Node.js',
         icon: <FaNodeJs />,
-        knowledge: 70,
+        knowledge: 77,
+      },
+      {
+        title: 'Nest.js',
+        icon: <SiNestjs />,
+        knowledge: 73,
       },
       {
         title: 'C#',
@@ -102,12 +112,18 @@ const skillArray: SkillArray[] = [
     ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
   },
   {
-    title: 'Communication',
+    title: 'Communication and other skills',
+    image: otherSkillsIMG,
     skills: [
       {
         title: 'Slack',
         icon: <FaSlack />,
         knowledge: 100,
+      },
+      {
+        title: 'VS Code',
+        icon: <SiVisualstudiocode />,
+        knowledge: 99,
       },
       {
         title: 'Microsoft Teams',
@@ -130,11 +146,6 @@ const skillArray: SkillArray[] = [
         icon: <FaGithub />,
         knowledge: 95,
       },
-    ].sort((el, el2) => (el.knowledge < el2.knowledge ? 1 : -1)),
-  },
-  {
-    title: 'Other skills',
-    skills: [
       {
         title: 'Figma',
         icon: <PiFigmaLogoDuotone />,

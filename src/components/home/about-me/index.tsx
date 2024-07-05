@@ -10,14 +10,19 @@ import { data } from './api/data'
 const AboutMe: FC = () => {
   return (
     <MainStack id={PagePaths.AboutMe}>
-      <Typography variant="h4" textAlign="center" fontWeight="bold">
+      <Typography variant="h4" fontWeight="bold">
         {data.title}
       </Typography>
       <Timeline
         sx={{ '& .MuiTimelineItem-root': { '&:before': { content: 'none' } } }}
       >
         {data.experience?.map((el, index) => (
-          <ExperienceView {...el} {...data} key={index} />
+          <ExperienceView
+            skillsTitle={data.skillsTitle}
+            responsibilitiesTitle={data.responsibilitiesTitle}
+            {...el}
+            key={index}
+          />
         ))}
       </Timeline>
     </MainStack>

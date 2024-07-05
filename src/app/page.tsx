@@ -6,7 +6,7 @@ import { Box } from '@mui/material'
 
 const Home = () => {
   return (
-    <Box component={'main'} maxWidth={'1440px'} mx="auto">
+    <Box component={'main'} maxWidth={'1280px'} mx="auto">
       <ShortInfo />
       <Skills />
       <AboutMe />
