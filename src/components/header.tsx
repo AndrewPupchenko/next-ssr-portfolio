@@ -9,15 +9,16 @@ const Header = () => {
   return (
     <>
       <Box
-        display={'flex'}
-        position={'fixed'}
-        width={'100%'}
-        height={HEADER_HEIGHT}
-        gap={1}
-        alignItems={'center'}
-        justifyContent={'center'}
-        zIndex={10}
         sx={({ breakpoints }) => ({
+          display: 'flex',
+          position: 'fixed',
+          width: '100%',
+          height: HEADER_HEIGHT,
+          gap: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+
           [breakpoints.down('sm')]: {
             bottom: 0,
             backgroundColor: 'rgba(0,0,0,0.1)',
@@ -27,12 +28,13 @@ const Header = () => {
         <Navigation />
       </Box>
       <Box
-        display={'flex'}
-        position={'fixed'}
-        bottom={10}
-        right={0}
-        zIndex={10}
         sx={({ breakpoints }) => ({
+          display: 'flex',
+          position: 'fixed',
+          bottom: 10,
+          right: 0,
+          zIndex: 10,
+
           [breakpoints.down('sm')]: {
             top: 10,
             bottom: 'auto',
