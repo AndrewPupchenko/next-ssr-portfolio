@@ -1,13 +1,7 @@
-import {
-  FaHome,
-  FaFileContract,
-  FaListUl,
-  FaTable,
-  FaHandsHelping,
-} from 'react-icons/fa'
+import { FaHandsHelping, FaHome, FaListUl, FaTable } from 'react-icons/fa'
 
 export enum PagePaths {
-  Home = '',
+  Home = 'home',
   Skills = 'skills',
   AboutMe = 'about-me',
   Contact = 'contact',
@@ -15,7 +9,7 @@ export enum PagePaths {
 
 export const navigationLinks = [
   {
-    path: '/',
+    path: `#${PagePaths.Home}`,
     name: 'Home',
     icon: <FaHome />,
   },

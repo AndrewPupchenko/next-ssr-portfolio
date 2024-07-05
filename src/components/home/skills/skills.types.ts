@@ -1,3 +1,5 @@
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+
 export type Skill = {
   title: string
   icon: JSX.Element
@@ -6,6 +8,7 @@ export type Skill = {
 
 export type SkillArray = {
   title: string
+  image: string | StaticImport
   skills: Skill[]
 }
 
