@@ -12,8 +12,9 @@ export const MainStack: FC<PropsWithChildren<MainStackProps>> = (props) => {
         spacing={4}
         justifyContent={'center'}
         alignItems={'center'}
-        minHeight={'100svh'}
+        minHeight={'calc(100svh - 5rem)'}
         p={2}
+        pt={'5rem'}
         {...props}
       />
     </InViewScroll>

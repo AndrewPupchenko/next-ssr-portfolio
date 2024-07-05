@@ -3,9 +3,8 @@ import { PagePaths } from '@/data/navigation-links'
 import { Timeline } from '@mui/lab'
 import { Typography } from '@mui/material'
 import { FC } from 'react'
-import { AboutMeProps } from './about-me.types'
-import { ExperienceView } from './experience-view'
 import { data } from './api/data'
+import { ExperienceView } from './experience-view'
 
 const AboutMe: FC = () => {
   return (
