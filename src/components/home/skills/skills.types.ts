@@ -8,7 +8,7 @@ export type Skill = {
 
 export type SkillArray = {
   title: string
-  image: string | StaticImport
+  image: string
   skills: Skill[]
 }
 

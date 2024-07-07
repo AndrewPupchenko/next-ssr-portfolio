@@ -1,5 +1,5 @@
-import otherSkillsIMG from '@/img/other-skills.png'
-import skillsIMG from '@/img/skills.svg'
+import otherSkillsIMG from '@/public/img/other-skills.png'
+import skillsIMG from '@/public/img/skills.svg'
 import { BiLogoSass, BiLogoTypescript } from 'react-icons/bi'
 import { BsMicrosoftTeams } from 'react-icons/bs'
 import {

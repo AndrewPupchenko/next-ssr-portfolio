@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <Box
-        sx={({ breakpoints }) => ({
+        sx={({ breakpoints, palette }) => ({
           display: 'flex',
           position: 'fixed',
           width: '100%',
@@ -21,7 +21,7 @@ const Header = () => {
 
           [breakpoints.down('sm')]: {
             bottom: 0,
-            backgroundColor: 'rgba(0,0,0,0.1)',
+            background: `linear-gradient(to top, ${palette.background.default}, rgba(0,0,0,0.0))`,
           },
         })}
       >

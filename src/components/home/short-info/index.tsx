@@ -1,7 +1,7 @@
 import { MainStack } from '@/components/ui/main-stack'
 import { StyledAvatar } from '@/components/ui/styled-avatar'
 import { PagePaths } from '@/data/navigation-links'
-import avatar from '@/img/avatar.png'
+import avatar from '@/public/img/avatar.png'
 import { Box, Button, Typography } from '@mui/material'
 import Link from 'next/link'
 import { FC } from 'react'

@@ -2,9 +2,9 @@
 import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
 import { Box, Typography } from '@mui/material'
+import Image from 'next/image'
 import { FC } from 'react'
 import { data } from './api/data'
-import Image from 'next/image'
 
 export const Skills: FC = () => {
   return (
