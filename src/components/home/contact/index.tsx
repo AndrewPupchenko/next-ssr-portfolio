@@ -1,6 +1,7 @@
+import { FragmentMotion } from '@/components/ui/fragment-motion'
 import { MainStack } from '@/components/ui/main-stack'
 import { PagePaths } from '@/data/navigation-links'
-import { Box, IconButton, Tooltip, Typography } from '@mui/material'
+import { Box, IconButton, Typography } from '@mui/material'
 import { FC } from 'react'
 import { data } from './api/data'
 import { ContactContainer } from './components/contact-container'
@@ -22,10 +23,10 @@ export const Contact: FC = () => {
             mt={2}
             display={'inline-grid'}
             sx={{ writingMode: 'vertical-rl' }}
-            gap={2}
+            width={'100%'}
           >
             {data?.contactWithMe?.map(({ title, url, icon }) => (
-              <Tooltip title={title} key={title}>
+              <FragmentMotion key={title}>
                 <IconButton
                   href={url || ''}
                   rel="noopener noreferrer"
@@ -35,7 +36,7 @@ export const Contact: FC = () => {
                 >
                   {icon}
                 </IconButton>
-              </Tooltip>
+              </FragmentMotion>
             ))}
           </Box>
         </Box>
