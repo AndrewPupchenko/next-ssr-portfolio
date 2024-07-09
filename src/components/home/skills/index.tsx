@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import { FC } from 'react'
 import { data } from './api/data'
+import { motion } from 'framer-motion'
 
 export const Skills: FC = () => {
   return (
@@ -79,7 +80,27 @@ export const Skills: FC = () => {
                       minHeight: 50,
                     }}
                   >
-                    {skill.icon}
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      transition={{
+                        duration: 0.3,
+                        ease: [0, 0.71, 0.2, 1.01],
+                        scale: {
+                          type: 'spring',
+                          damping: 5,
+                          stiffness: 100,
+                          restDelta: 0.001,
+                        },
+                      }}
+                      variants={{
+                        visible: { opacity: 1, scale: 1 },
+                        hidden: { opacity: 0, scale: 0 },
+                      }}
+                    >
+                      {skill.icon}
+                    </motion.div>
+
                     <Typography variant="body2">{skill.title}</Typography>
                   </Box>
                 ))}
